@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">shinkansen</string>
+    <string name="roll" translatable="false">Roll</string>
+</resources>
