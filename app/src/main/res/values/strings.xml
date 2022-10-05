@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">shinkansen</string>
     <string name="roll" translatable="false">Roll</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="trainDetail">You haven\'t chosen a train yet</string>
+    <string name="time11">11:00</string>
+    <string name="time15">15:00</string>
+    <string name="time19">19:00</string>
+    <string name="ok" translatable="false">OK</string>
 </resources>
