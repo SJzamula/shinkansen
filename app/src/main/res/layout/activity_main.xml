@@ -7,29 +7,6 @@
     tools:context=".MainActivity"
     android:padding="8dp">
 
-
-    <ImageView
-        android:id="@+id/dice_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/dice_1" />
-
-    <TextView
-        android:id="@+id/result_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="1"
-        android:layout_gravity="center_horizontal"
-        android:textSize="30sp"/>
-
-    <Button
-        android:id="@+id/roll_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/roll"
-        android:layout_gravity="center_horizontal"/>
-
     <TextView
         android:id="@+id/textView1"
         android:layout_width="match_parent"
@@ -81,7 +58,7 @@
             android:id="@+id/radio19"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="@string/time19" />
+            android:text="@string/time19"/>
     </RadioGroup>
 
     <Button
