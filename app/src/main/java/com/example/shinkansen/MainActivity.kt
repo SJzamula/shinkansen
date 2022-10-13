@@ -1,18 +1,13 @@
 package com.example.shinkansen
 
-import android.content.ContentValues.TAG
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
-import android.util.Log
-import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
-import com.afollestad.materialdialogs.MaterialDialog
-import com.afollestad.materialdialogs.customview.customView
-import com.afollestad.materialdialogs.customview.getCustomView
 
 class MainActivity : AppCompatActivity() {
     lateinit var preferences: SharedPreferences
@@ -35,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         editor = preferences.edit()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun showTrainDetails() {
         val trainDetails: TextView = findViewById(R.id.trainDetails)
 
@@ -46,23 +42,16 @@ class MainActivity : AppCompatActivity() {
         val radioGroup: RadioGroup = findViewById(R.id.radioGroup)
         val intSelectButton: Int = radioGroup.checkedRadioButtonId
         val radioButton: TextView = findViewById(intSelectButton)
-        //Toast.makeText(baseContext, radioButton.text, Toast.LENGTH_SHORT).show()
         val time = radioButton.text
-        if (fromTextField.text.length == 0
-            || toTextField.text.length == 0
-            || intSelectButton == -1) {
-        showDialog()
+
+        if (fromTextField.text.isEmpty()
+            || toTextField.text.isEmpty()
+            || intSelectButton == -1
+        ) {
+            CustomDialog(this).customDialog()
         }  else {
-            trainDetails.text = "Train from $fromText to $toText at ${radioButton.text}"
+            trainDetails.text = "Train from $fromText to $toText at $time"
         }
     }
 
-    fun showDialog(){
-        val dialog = MaterialDialog(this)
-            .noAutoDismiss()
-            .customView(R.layout.popup_window)
-
-        dialog.show()
-
-    }
 }
