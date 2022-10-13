@@ -28,10 +28,6 @@ class MainActivity : AppCompatActivity() {
         buttonOK.setOnClickListener {
             showTrainDetails()
         }
-
-        // якщо не введені дані повністю, виникає вспливаюче вікно з проханням заповнити дані повністю
-        // зробити кращий дизайн
-
     }
 
     private fun initPrefs(){
@@ -48,9 +44,6 @@ class MainActivity : AppCompatActivity() {
         val toText = toTextField.text
 
         val radioGroup: RadioGroup = findViewById(R.id.radioGroup)
-        val radio11:RadioButton = findViewById(R.id.radio11)
-        val radio15:RadioButton = findViewById(R.id.radio15)
-        val radio19:RadioButton = findViewById(R.id.radio19)
         val intSelectButton: Int = radioGroup.checkedRadioButtonId
         val radioButton: TextView = findViewById(intSelectButton)
         //Toast.makeText(baseContext, radioButton.text, Toast.LENGTH_SHORT).show()
@@ -58,9 +51,9 @@ class MainActivity : AppCompatActivity() {
         if (fromTextField.text.length == 0
             || toTextField.text.length == 0
             || intSelectButton == -1) {
-        //showDialog()
+        showDialog()
         }  else {
-            trainDetails.text = "Train from $fromText to $toText at ${radioGroup.checkedRadioButtonId}"
+            trainDetails.text = "Train from $fromText to $toText at ${radioButton.text}"
         }
     }
 
