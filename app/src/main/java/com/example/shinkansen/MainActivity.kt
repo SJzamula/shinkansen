@@ -40,17 +40,20 @@ class MainActivity : AppCompatActivity() {
         val toText = toTextField.text
 
         val radioGroup: RadioGroup = findViewById(R.id.radioGroup)
-        val intSelectButton: Int = radioGroup.checkedRadioButtonId
-        val radioButton: TextView = findViewById(intSelectButton)
-        val time = radioButton.text
+        if (radioGroup.isSelected) {
+            val intSelectButton: Int = radioGroup.checkedRadioButtonId
+            val radioButton: RadioButton = findViewById(intSelectButton)
+            val time = radioButton.text
+            if (fromTextField.text.isEmpty()
+                || toTextField.text.isEmpty()
+            ) {
 
-        if (fromTextField.text.isEmpty()
-            || toTextField.text.isEmpty()
-            || intSelectButton == -1
-        ) {
+            }  else {
+                trainDetails.text = "Train from $fromText to $toText at $time"
+            }
+        }
+        else {
             CustomDialog(this).customDialog()
-        }  else {
-            trainDetails.text = "Train from $fromText to $toText at $time"
         }
     }
 
