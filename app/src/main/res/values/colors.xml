@@ -10,4 +10,7 @@
     <color name="colorPrimary">#bc214b</color>
     <color name="colorPrimaryDark">#9e1c40</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="raspberry">#8A307F</color>
+    <color name="blueDark">#6883BC</color>
+    <color name="blueLight">#79A7D3</color>
 </resources>
