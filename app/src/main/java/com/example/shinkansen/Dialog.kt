@@ -1,21 +1,65 @@
-package com.example.shinkansen
-
-import android.app.Dialog
-import android.content.Context
+import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
-import android.widget.Button
+import android.view.ViewGroup
+import android.view.WindowManager
+import androidx.fragment.app.DialogFragment
+import com.example.shinkansen.R
+import kotlinx.android.synthetic.main.popup_window.view.*
 
-class CustomDialog(context: Context) : Dialog(context)  {
-    fun customDialog() {
-        val dialog = Dialog(context)
-        dialog.setContentView(R.layout.popup_window)
-        dialog.setTitle("Android Custom Dialog")
-        dialog.setCancelable(false)
-        val btDialog = dialog.findViewById(R.id.dialogOKBtn) as Button
-        btDialog.setOnClickListener(View.OnClickListener {
-            dialog.dismiss()
-        })
+class CustomDialog : DialogFragment() {
 
-        dialog.show()
+    companion object {
+
+        const val TAG = "CustomDialog"
+
+        private const val KEY_TITLE = "KEY_TITLE"
+        private const val KEY_SUBTITLE = "KEY_SUBTITLE"
+
+        fun newInstance(title: String, subTitle: String): CustomDialog {
+            val args = Bundle()
+            args.putString(KEY_TITLE, title)
+            args.putString(KEY_SUBTITLE, subTitle)
+            val fragment = CustomDialog()
+            fragment.arguments = args
+            return fragment
+        }
+
     }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.popup_window, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupView(view)
+        setupClickListeners(view)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        dialog?.window?.setLayout(
+            WindowManager.LayoutParams.MATCH_PARENT,
+            WindowManager.LayoutParams.WRAP_CONTENT
+        )
+    }
+
+    private fun setupView(view: View) {
+        view.textDialog.text = arguments?.getString(KEY_TITLE)
+        //view.tvSubTitle.text = arguments?.getString(KEY_SUBTITLE)
+    }
+
+    private fun setupClickListeners(view: View) {
+        view.dialogOKBtn.setOnClickListener {
+            // TODO: Do some task here
+
+            dismiss()
+        }
+    }
+
 }

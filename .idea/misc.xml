@@ -7,6 +7,13 @@
         <entry key="app/src/main/res/drawable/empty_dice.xml" value="0.123" />
         <entry key="app/src/main/res/layout-ldrtl/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_main1.xml" value="0.14920906370243694" />
+        <entry key="app/src/main/res/layout/fragment.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_content.xml" value="0.10091934809862098" />
+        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.20649850363403163" />
+        <entry key="app/src/main/res/layout/fragment_new.xml" value="0.19410004275331338" />
+        <entry key="app/src/main/res/layout/fragment_user_input.xml" value="0.14920906370243694" />
+        <entry key="app/src/main/res/layout/new_activity.xml" value="0.10091934809862098" />
         <entry key="app/src/main/res/layout/pop_up.xml" value="0.14920906370243694" />
         <entry key="app/src/main/res/layout/popup_window.xml" value="0.25" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2845" />

@@ -1,81 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/rootLayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:padding="8dp">
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Direction: " />
-
-    <EditText
-        android:id="@+id/fromTextField"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="@string/from"
-        android:imeOptions="actionDone"
-        android:inputType="text" />
-
-    <EditText
-        android:id="@+id/toTextField"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="@string/to"
-        android:inputType="text" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Time: " />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:id="@+id/fragmentContainer" />
 
-        <RadioButton
-            android:checked="false"
-            android:id="@+id/radio11"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="@string/time11" />
-
-        <RadioButton
-            android:checked="false"
-            android:id="@+id/radio15"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="@string/time15" />
-
-        <RadioButton
-            android:checked="false"
-            android:id="@+id/radio19"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="@string/time19"/>
-    </RadioGroup>
-
-    <Button
-        android:id="@+id/buttonOK"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/ok" />
-
-    <TextView
-        android:id="@+id/trainDetails"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/trainDetail" />
-
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
